@@ -105,7 +105,7 @@ int set_msq(key_t msq_key,int msq_flg)
 {
     int msq_id;
 
-    if((msq_id = get_ipc_id("/proc/sysvipc/msq",msq_key)) < 0) {
+    if((msq_id = get_ipc_id("/proc/sysvipc/msg",msq_key)) < 0) {
         if((msq_id = msgget(msq_key,msq_flg)) < 0) {
             perror("messageQueue set error");
             exit(EXIT_FAILURE);
